@@ -1,32 +1,19 @@
 import React from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
-import "./App.css";
-import HomePage from "./pages/hompage/Homepage.component";
-// import SignInSignUp from "./pages/sign-in-and-sign-up-page/sign-in-and-sign-up-page.component";
-// import ShopPage from "./pages/shop/shop.component";
+import { Routes, Route } from "react-router-dom";
 
-const HatsPage = () => {
-	const navigate = useNavigate();
-	return (
-		<>
-			<div>Hats Page</div>
-			<button
-				onClick={() => {
-					navigate("/");
-				}}
-			>
-				go to main Page
-			</button>
-		</>
-	);
-};
+import "./App.css";
+
+import HomePage from "./pages/hompage/Homepage.component";
+import ShopPage from "./pages/shop/shop.component";
+import Header from "./components/header/header.component";
 
 function App() {
 	return (
 		<div>
+			<Header />
 			<Routes>
 				<Route exact path="/" element={<HomePage />} />
-				<Route path="/shop/hats" element={<HatsPage />} />
+				<Route path="/shop" element={<ShopPage />} />
 			</Routes>
 		</div>
 	);
