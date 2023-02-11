@@ -11,18 +11,25 @@
 		padding: 25px;
 	}
 	.options {
-		width: 50%;
+		width: 60%;
 		height: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: flex-end;
-
+		transition: 300ms ease all;
+		text-transform: uppercase;
+		.name {
+			color: #42a5f4;
+			margin: 0 40px;
+		}
 		.option {
 			padding: 10px 15px;
-			transition: 300ms ease all;
+			cursor: pointer;
 
 			&:hover {
-				border-bottom: 1px solid black;
+				transition: 300ms ease all;
+				background-color: black;
+				color: white;
 			}
 		}
 	}
