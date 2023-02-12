@@ -15,9 +15,11 @@ const config = {
 export const createUserProfileDocument = async (userAuth, addtionalData) => {
 	if (!userAuth) return;
 
-	const userRef = firestore.doc("users/1324kjskdfj");
+	const userRef = firestore.doc(`users/${userAuth.uid}`);
 
 	const snapShot = await userRef.get();
+
+	console.log(snapShot);
 
 	if (!snapShot.exists) {
 		const { displayName, email } = userAuth;
