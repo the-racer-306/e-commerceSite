@@ -1,11 +1,11 @@
 import React from "react";
-import { connect } from "react-redux";
+import { connect } from "react-redux"; // have access to thing Related to Redux
 import { Link } from "react-router-dom";
 
 import { auth } from "../../firebase/firebase.utils";
 
 import { ReactComponent as Logo } from "./crown.svg";
-
+import CartIcon from "../cart-icon/cart-icon.component";
 import "./header.styles.scss";
 
 const Header = ({ currentUser }) => (
@@ -13,6 +13,7 @@ const Header = ({ currentUser }) => (
 		<Link to={"/"} className="logo-container">
 			<Logo className="logo" />
 		</Link>
+
 		<div className="options">
 			{currentUser ? (
 				<div className="name">Hello {currentUser.displayName}</div>
@@ -32,6 +33,7 @@ const Header = ({ currentUser }) => (
 					SIGN IN
 				</Link>
 			)}
+			<CartIcon />
 		</div>
 	</div>
 );
